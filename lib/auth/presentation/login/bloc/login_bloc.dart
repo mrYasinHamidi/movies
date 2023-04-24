@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:movies/auth/infrastructure/repositories/auth_repository.dart';
 import 'package:movies/base/intent_handler.dart';
-import 'package:uni_links/uni_links.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'login_bloc.freezed.dart';
@@ -20,21 +19,44 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginEvent>(
       (event, emit) {
         event.map(
-          login: (_) => _login(_, emit),
+          tokenRequested: (_) => _tokenRequested(_, emit),
+          tokenChecked: (_) => _tokenChecked(_, emit),
         );
       },
     );
   }
 
-  void _login(
-    _Login login,
+  void _tokenRequested(
+    _TokenRequested event,
     Emitter<LoginState> emit,
   ) async {
-    final token = await _repository.createToken();
-    await launch('https://www.themoviedb.org/authenticate/$token?redirect_to=unilinks');
-    uriLinkStream.listen((event) {
-      print(event);
-    });
-    // final session = _repository.createSession();
+    try {
+      emit(LoginState.loading());
+      final token = await _repository.createToken();
+      await launch('https://www.themoviedb.org/authenticate/$token?redirect_to=login_callback');
+      IntentHandler.instance.listenOnce(
+        tag: 'login',
+        onSuccess: (response) {
+          print(response);
+          add(LoginEvent.tokenChecked(checkingResponse: response));
+        },
+        onFail: () {},
+      );
+    } catch (e) {
+      emit(LoginState.failed());
+    }
+  }
+
+  void _tokenChecked(
+    _TokenChecked event,
+    Emitter<LoginState> emit,
+  ) {
+    if (event.checkingResponse != null &&
+        event.checkingResponse!.path == '/login_callback' &&
+        event.checkingResponse!.queryParameters['approved'] != null) {
+      emit(LoginState.success());
+    } else {
+      emit(LoginState.failed());
+    }
   }
 }
