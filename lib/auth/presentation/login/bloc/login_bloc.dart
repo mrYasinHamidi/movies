@@ -33,7 +33,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     try {
       emit(LoginState.loading());
       final token = await _repository.createToken();
-      await launch('https://www.themoviedb.org/authenticate/$token?redirect_to=login_callback');
+      launchUrl(Uri.parse(_repository.getValidationUrl(token)));
       IntentHandler.instance.listenOnce(
         tag: 'login',
         onSuccess: (response) {
