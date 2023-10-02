@@ -12,14 +12,17 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../auth/infrastructure/providers/api_auth_provider.dart' as _i5;
-import '../auth/infrastructure/repositories/auth_repository.dart' as _i6;
-import '../auth/presentation/login/bloc/login_bloc.dart' as _i7;
-import '../base/request.dart' as _i4;
+import '../auth/infrastructure/providers/api_auth_provider.dart' as _i6;
+import '../auth/infrastructure/providers/local_auth_provider.dart' as _i4;
+import '../auth/infrastructure/repositories/auth_repository.dart' as _i7;
+import '../auth/mapper.dart' as _i10;
+import '../auth/presentation/login/bloc/login_bloc.dart' as _i8;
+import '../auth/presentation/welcome/bloc/welcome_bloc.dart' as _i9;
+import '../base/request.dart' as _i5;
 import '../router/app_router.dart' as _i3;
 
 extension GetItInjectableX on _i1.GetIt {
-  // initializes the registration of main-scope dependencies inside of GetIt
+// initializes the registration of main-scope dependencies inside of GetIt
   _i1.GetIt init({
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
@@ -30,12 +33,20 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     gh.singleton<_i3.AppRouter>(_i3.AppRouter());
-    gh.singleton<_i4.Request>(_i4.Request());
-    gh.lazySingleton<_i5.ApiAuthProvider>(
-        () => _i5.ApiAuthProvider(gh<_i4.Request>()));
-    gh.lazySingleton<_i6.AuthRepository>(
-        () => _i6.AuthRepository(gh<_i5.ApiAuthProvider>()));
-    gh.factory<_i7.LoginBloc>(() => _i7.LoginBloc(gh<_i6.AuthRepository>()));
+    gh.lazySingleton<_i4.LocalAccountProvider>(
+        () => _i4.LocalAccountProvider());
+    gh.singleton<_i5.Request>(_i5.Request());
+    gh.lazySingleton<_i6.ApiAuthProvider>(
+        () => _i6.ApiAuthProvider(gh<_i5.Request>()));
+    gh.lazySingleton<_i7.AuthRepository>(() => _i7.AuthRepository(
+          gh<_i6.ApiAuthProvider>(),
+          gh<_i4.LocalAccountProvider>(),
+        ));
+    gh.factory<_i8.LoginBloc>(() => _i8.LoginBloc(gh<_i7.AuthRepository>()));
+    gh.factory<_i9.WelcomeBloc>(
+        () => _i9.WelcomeBloc(gh<_i7.AuthRepository>()));
+    gh.lazySingleton<_i10.AuthMapper>(
+        () => _i10.AuthMapper(gh<_i7.AuthRepository>()));
     return this;
   }
 }

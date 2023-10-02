@@ -37,7 +37,7 @@ class ApiAuthProvider {
     return res.data['request_token'];
   }
 
-  Future<bool> createSession(String token) async {
+  Future<String> createSession(String token) async {
     final res = await _request.post(
       'authentication/session/new',
       data: {'request_token': token},

@@ -1,13 +1,25 @@
 import 'package:injectable/injectable.dart';
+import 'package:movies/auth/domain/session/session.dart';
 import 'package:movies/auth/infrastructure/providers/api_auth_provider.dart';
+import 'package:movies/auth/infrastructure/providers/local_auth_provider.dart';
 
 @lazySingleton
 class AuthRepository {
   final ApiAuthProvider _authProvider;
+  final LocalAccountProvider _localAuthProvider;
 
-  AuthRepository(this._authProvider);
+  AuthRepository(this._authProvider, this._localAuthProvider);
 
-  Future<String> createGuestSession() => _authProvider.createGuestSession();
+  Future<void> ensureInitialized() => _localAuthProvider.ensureInitialized();
+
+  bool isLogin() => _localAuthProvider.getSession() != null;
+
+  Future<Session> createGuestSession() async {
+    final sessionId = await _authProvider.createGuestSession();
+    final session = Session(id: sessionId, isGuest: true);
+    await _localAuthProvider.saveSession(session);
+    return session;
+  }
 
   Future<String> createToken() => _authProvider.createToken();
 
@@ -20,7 +32,12 @@ class AuthRepository {
   ) =>
       _authProvider.validateTokenWithLogin(username, password, token);
 
-  Future<bool> createSession(String token) => _authProvider.createSession(token);
+  Future<Session> createSession(String token) async {
+    final sessionId = await _authProvider.createSession(token);
+    final session = Session(id: sessionId, isGuest: false);
+    await _localAuthProvider.saveSession(session);
+    return session;
+  }
 
   Future<dynamic> deleteSession(String sessionId) => _authProvider.deleteSession(sessionId);
 }
