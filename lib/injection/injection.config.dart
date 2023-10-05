@@ -18,8 +18,8 @@ import '../auth/infrastructure/repositories/auth_repository.dart' as _i8;
 import '../auth/mapper.dart' as _i11;
 import '../auth/presentation/login/bloc/login_bloc.dart' as _i9;
 import '../auth/presentation/welcome/bloc/welcome_bloc.dart' as _i10;
-import '../base/request.dart' as _i5;
-import '../base/theme/theme_bloc.dart' as _i6;
+import '../common/request.dart' as _i5;
+import '../common/theme/theme_bloc.dart' as _i6;
 import '../router/app_router.dart' as _i3;
 
 extension GetItInjectableX on _i1.GetIt {

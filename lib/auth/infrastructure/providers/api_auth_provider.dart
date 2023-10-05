@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:movies/base/request.dart';
+import 'package:movies/common/request.dart';
 
 @lazySingleton
 class ApiAuthProvider {

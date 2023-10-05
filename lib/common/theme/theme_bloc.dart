@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movies/base/theme/theme.dart';
+import 'package:movies/common/theme/theme.dart';
 
 part 'theme_event.dart';
 
