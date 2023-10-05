@@ -11,7 +11,7 @@ part 'theme_bloc.freezed.dart';
 
 @injectable
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
-  ThemeBloc() : super(const ThemeState.initial(LightTheme())) {
+  ThemeBloc() : super(ThemeState.initial(DarkTheme())) {
     on<ThemeEvent>(
       (event, emit) {
         event.map(
@@ -26,9 +26,9 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     Emitter<ThemeState> emit,
   ) {
     if (event.isDark) {
-      emit(ThemeState.themeState(const DarkTheme()));
+      emit(ThemeState.themeState(DarkTheme()));
     } else {
-      emit(ThemeState.themeState(const LightTheme()));
+      emit(ThemeState.themeState(LightTheme()));
     }
   }
 }

@@ -21,6 +21,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         event.map(
           tokenRequested: (_) => _tokenRequested(_, emit),
           tokenChecked: (_) => _tokenChecked(_, emit),
+          passwordVisibilityChanged: (_) => _passwordVisibilityChanged(_, emit),
         );
       },
     );
@@ -58,5 +59,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     } else {
       emit(LoginState.failed());
     }
+  }
+
+  void _passwordVisibilityChanged(
+    _PasswordVisibilityChanged event,
+    Emitter<LoginState> emit,
+  ) {
+    emit(LoginState.passwordVisibility(event.isVisible));
   }
 }

@@ -20,18 +20,21 @@ mixin _$LoginEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() tokenRequested,
     required TResult Function(Uri? checkingResponse) tokenChecked,
+    required TResult Function(bool isVisible) passwordVisibilityChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? tokenRequested,
     TResult? Function(Uri? checkingResponse)? tokenChecked,
+    TResult? Function(bool isVisible)? passwordVisibilityChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? tokenRequested,
     TResult Function(Uri? checkingResponse)? tokenChecked,
+    TResult Function(bool isVisible)? passwordVisibilityChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,24 @@ mixin _$LoginEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_TokenRequested value) tokenRequested,
     required TResult Function(_TokenChecked value) tokenChecked,
+    required TResult Function(_PasswordVisibilityChanged value)
+        passwordVisibilityChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TokenRequested value)? tokenRequested,
     TResult? Function(_TokenChecked value)? tokenChecked,
+    TResult? Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TokenRequested value)? tokenRequested,
     TResult Function(_TokenChecked value)? tokenChecked,
+    TResult Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +123,7 @@ class _$_TokenRequested implements _TokenRequested {
   TResult when<TResult extends Object?>({
     required TResult Function() tokenRequested,
     required TResult Function(Uri? checkingResponse) tokenChecked,
+    required TResult Function(bool isVisible) passwordVisibilityChanged,
   }) {
     return tokenRequested();
   }
@@ -123,6 +133,7 @@ class _$_TokenRequested implements _TokenRequested {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? tokenRequested,
     TResult? Function(Uri? checkingResponse)? tokenChecked,
+    TResult? Function(bool isVisible)? passwordVisibilityChanged,
   }) {
     return tokenRequested?.call();
   }
@@ -132,6 +143,7 @@ class _$_TokenRequested implements _TokenRequested {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? tokenRequested,
     TResult Function(Uri? checkingResponse)? tokenChecked,
+    TResult Function(bool isVisible)? passwordVisibilityChanged,
     required TResult orElse(),
   }) {
     if (tokenRequested != null) {
@@ -145,6 +157,8 @@ class _$_TokenRequested implements _TokenRequested {
   TResult map<TResult extends Object?>({
     required TResult Function(_TokenRequested value) tokenRequested,
     required TResult Function(_TokenChecked value) tokenChecked,
+    required TResult Function(_PasswordVisibilityChanged value)
+        passwordVisibilityChanged,
   }) {
     return tokenRequested(this);
   }
@@ -154,6 +168,8 @@ class _$_TokenRequested implements _TokenRequested {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TokenRequested value)? tokenRequested,
     TResult? Function(_TokenChecked value)? tokenChecked,
+    TResult? Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
   }) {
     return tokenRequested?.call(this);
   }
@@ -163,6 +179,8 @@ class _$_TokenRequested implements _TokenRequested {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TokenRequested value)? tokenRequested,
     TResult Function(_TokenChecked value)? tokenChecked,
+    TResult Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
     required TResult orElse(),
   }) {
     if (tokenRequested != null) {
@@ -243,6 +261,7 @@ class _$_TokenChecked implements _TokenChecked {
   TResult when<TResult extends Object?>({
     required TResult Function() tokenRequested,
     required TResult Function(Uri? checkingResponse) tokenChecked,
+    required TResult Function(bool isVisible) passwordVisibilityChanged,
   }) {
     return tokenChecked(checkingResponse);
   }
@@ -252,6 +271,7 @@ class _$_TokenChecked implements _TokenChecked {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? tokenRequested,
     TResult? Function(Uri? checkingResponse)? tokenChecked,
+    TResult? Function(bool isVisible)? passwordVisibilityChanged,
   }) {
     return tokenChecked?.call(checkingResponse);
   }
@@ -261,6 +281,7 @@ class _$_TokenChecked implements _TokenChecked {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? tokenRequested,
     TResult Function(Uri? checkingResponse)? tokenChecked,
+    TResult Function(bool isVisible)? passwordVisibilityChanged,
     required TResult orElse(),
   }) {
     if (tokenChecked != null) {
@@ -274,6 +295,8 @@ class _$_TokenChecked implements _TokenChecked {
   TResult map<TResult extends Object?>({
     required TResult Function(_TokenRequested value) tokenRequested,
     required TResult Function(_TokenChecked value) tokenChecked,
+    required TResult Function(_PasswordVisibilityChanged value)
+        passwordVisibilityChanged,
   }) {
     return tokenChecked(this);
   }
@@ -283,6 +306,8 @@ class _$_TokenChecked implements _TokenChecked {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TokenRequested value)? tokenRequested,
     TResult? Function(_TokenChecked value)? tokenChecked,
+    TResult? Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
   }) {
     return tokenChecked?.call(this);
   }
@@ -292,6 +317,8 @@ class _$_TokenChecked implements _TokenChecked {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TokenRequested value)? tokenRequested,
     TResult Function(_TokenChecked value)? tokenChecked,
+    TResult Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
     required TResult orElse(),
   }) {
     if (tokenChecked != null) {
@@ -312,6 +339,153 @@ abstract class _TokenChecked implements LoginEvent {
 }
 
 /// @nodoc
+abstract class _$$_PasswordVisibilityChangedCopyWith<$Res> {
+  factory _$$_PasswordVisibilityChangedCopyWith(
+          _$_PasswordVisibilityChanged value,
+          $Res Function(_$_PasswordVisibilityChanged) then) =
+      __$$_PasswordVisibilityChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isVisible});
+}
+
+/// @nodoc
+class __$$_PasswordVisibilityChangedCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$_PasswordVisibilityChanged>
+    implements _$$_PasswordVisibilityChangedCopyWith<$Res> {
+  __$$_PasswordVisibilityChangedCopyWithImpl(
+      _$_PasswordVisibilityChanged _value,
+      $Res Function(_$_PasswordVisibilityChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isVisible = null,
+  }) {
+    return _then(_$_PasswordVisibilityChanged(
+      isVisible: null == isVisible
+          ? _value.isVisible
+          : isVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PasswordVisibilityChanged implements _PasswordVisibilityChanged {
+  const _$_PasswordVisibilityChanged({required this.isVisible});
+
+  @override
+  final bool isVisible;
+
+  @override
+  String toString() {
+    return 'LoginEvent.passwordVisibilityChanged(isVisible: $isVisible)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PasswordVisibilityChanged &&
+            (identical(other.isVisible, isVisible) ||
+                other.isVisible == isVisible));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isVisible);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PasswordVisibilityChangedCopyWith<_$_PasswordVisibilityChanged>
+      get copyWith => __$$_PasswordVisibilityChangedCopyWithImpl<
+          _$_PasswordVisibilityChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() tokenRequested,
+    required TResult Function(Uri? checkingResponse) tokenChecked,
+    required TResult Function(bool isVisible) passwordVisibilityChanged,
+  }) {
+    return passwordVisibilityChanged(isVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? tokenRequested,
+    TResult? Function(Uri? checkingResponse)? tokenChecked,
+    TResult? Function(bool isVisible)? passwordVisibilityChanged,
+  }) {
+    return passwordVisibilityChanged?.call(isVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? tokenRequested,
+    TResult Function(Uri? checkingResponse)? tokenChecked,
+    TResult Function(bool isVisible)? passwordVisibilityChanged,
+    required TResult orElse(),
+  }) {
+    if (passwordVisibilityChanged != null) {
+      return passwordVisibilityChanged(isVisible);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TokenRequested value) tokenRequested,
+    required TResult Function(_TokenChecked value) tokenChecked,
+    required TResult Function(_PasswordVisibilityChanged value)
+        passwordVisibilityChanged,
+  }) {
+    return passwordVisibilityChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TokenRequested value)? tokenRequested,
+    TResult? Function(_TokenChecked value)? tokenChecked,
+    TResult? Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
+  }) {
+    return passwordVisibilityChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TokenRequested value)? tokenRequested,
+    TResult Function(_TokenChecked value)? tokenChecked,
+    TResult Function(_PasswordVisibilityChanged value)?
+        passwordVisibilityChanged,
+    required TResult orElse(),
+  }) {
+    if (passwordVisibilityChanged != null) {
+      return passwordVisibilityChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PasswordVisibilityChanged implements LoginEvent {
+  const factory _PasswordVisibilityChanged({required final bool isVisible}) =
+      _$_PasswordVisibilityChanged;
+
+  bool get isVisible;
+  @JsonKey(ignore: true)
+  _$$_PasswordVisibilityChangedCopyWith<_$_PasswordVisibilityChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$LoginState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -319,6 +493,7 @@ mixin _$LoginState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failed,
+    required TResult Function(bool isVisible) passwordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -327,6 +502,7 @@ mixin _$LoginState {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failed,
+    TResult? Function(bool isVisible)? passwordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -335,6 +511,7 @@ mixin _$LoginState {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failed,
+    TResult Function(bool isVisible)? passwordVisibility,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -344,6 +521,7 @@ mixin _$LoginState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failed value) failed,
+    required TResult Function(_PasswordVisibility value) passwordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -352,6 +530,7 @@ mixin _$LoginState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failed value)? failed,
+    TResult? Function(_PasswordVisibility value)? passwordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -360,6 +539,7 @@ mixin _$LoginState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failed value)? failed,
+    TResult Function(_PasswordVisibility value)? passwordVisibility,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -424,6 +604,7 @@ class _$_Initial implements _Initial {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failed,
+    required TResult Function(bool isVisible) passwordVisibility,
   }) {
     return initial();
   }
@@ -435,6 +616,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failed,
+    TResult? Function(bool isVisible)? passwordVisibility,
   }) {
     return initial?.call();
   }
@@ -446,6 +628,7 @@ class _$_Initial implements _Initial {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failed,
+    TResult Function(bool isVisible)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -461,6 +644,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failed value) failed,
+    required TResult Function(_PasswordVisibility value) passwordVisibility,
   }) {
     return initial(this);
   }
@@ -472,6 +656,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failed value)? failed,
+    TResult? Function(_PasswordVisibility value)? passwordVisibility,
   }) {
     return initial?.call(this);
   }
@@ -483,6 +668,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failed value)? failed,
+    TResult Function(_PasswordVisibility value)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -537,6 +723,7 @@ class _$_Loading implements _Loading {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failed,
+    required TResult Function(bool isVisible) passwordVisibility,
   }) {
     return loading();
   }
@@ -548,6 +735,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failed,
+    TResult? Function(bool isVisible)? passwordVisibility,
   }) {
     return loading?.call();
   }
@@ -559,6 +747,7 @@ class _$_Loading implements _Loading {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failed,
+    TResult Function(bool isVisible)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -574,6 +763,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failed value) failed,
+    required TResult Function(_PasswordVisibility value) passwordVisibility,
   }) {
     return loading(this);
   }
@@ -585,6 +775,7 @@ class _$_Loading implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failed value)? failed,
+    TResult? Function(_PasswordVisibility value)? passwordVisibility,
   }) {
     return loading?.call(this);
   }
@@ -596,6 +787,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failed value)? failed,
+    TResult Function(_PasswordVisibility value)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -650,6 +842,7 @@ class _$_Success implements _Success {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failed,
+    required TResult Function(bool isVisible) passwordVisibility,
   }) {
     return success();
   }
@@ -661,6 +854,7 @@ class _$_Success implements _Success {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failed,
+    TResult? Function(bool isVisible)? passwordVisibility,
   }) {
     return success?.call();
   }
@@ -672,6 +866,7 @@ class _$_Success implements _Success {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failed,
+    TResult Function(bool isVisible)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -687,6 +882,7 @@ class _$_Success implements _Success {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failed value) failed,
+    required TResult Function(_PasswordVisibility value) passwordVisibility,
   }) {
     return success(this);
   }
@@ -698,6 +894,7 @@ class _$_Success implements _Success {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failed value)? failed,
+    TResult? Function(_PasswordVisibility value)? passwordVisibility,
   }) {
     return success?.call(this);
   }
@@ -709,6 +906,7 @@ class _$_Success implements _Success {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failed value)? failed,
+    TResult Function(_PasswordVisibility value)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -762,6 +960,7 @@ class _$_Failed implements _Failed {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failed,
+    required TResult Function(bool isVisible) passwordVisibility,
   }) {
     return failed();
   }
@@ -773,6 +972,7 @@ class _$_Failed implements _Failed {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failed,
+    TResult? Function(bool isVisible)? passwordVisibility,
   }) {
     return failed?.call();
   }
@@ -784,6 +984,7 @@ class _$_Failed implements _Failed {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failed,
+    TResult Function(bool isVisible)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -799,6 +1000,7 @@ class _$_Failed implements _Failed {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failed value) failed,
+    required TResult Function(_PasswordVisibility value) passwordVisibility,
   }) {
     return failed(this);
   }
@@ -810,6 +1012,7 @@ class _$_Failed implements _Failed {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failed value)? failed,
+    TResult? Function(_PasswordVisibility value)? passwordVisibility,
   }) {
     return failed?.call(this);
   }
@@ -821,6 +1024,7 @@ class _$_Failed implements _Failed {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failed value)? failed,
+    TResult Function(_PasswordVisibility value)? passwordVisibility,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -832,4 +1036,158 @@ class _$_Failed implements _Failed {
 
 abstract class _Failed implements LoginState {
   const factory _Failed() = _$_Failed;
+}
+
+/// @nodoc
+abstract class _$$_PasswordVisibilityCopyWith<$Res> {
+  factory _$$_PasswordVisibilityCopyWith(_$_PasswordVisibility value,
+          $Res Function(_$_PasswordVisibility) then) =
+      __$$_PasswordVisibilityCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isVisible});
+}
+
+/// @nodoc
+class __$$_PasswordVisibilityCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$_PasswordVisibility>
+    implements _$$_PasswordVisibilityCopyWith<$Res> {
+  __$$_PasswordVisibilityCopyWithImpl(
+      _$_PasswordVisibility _value, $Res Function(_$_PasswordVisibility) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isVisible = null,
+  }) {
+    return _then(_$_PasswordVisibility(
+      null == isVisible
+          ? _value.isVisible
+          : isVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PasswordVisibility implements _PasswordVisibility {
+  const _$_PasswordVisibility(this.isVisible);
+
+  @override
+  final bool isVisible;
+
+  @override
+  String toString() {
+    return 'LoginState.passwordVisibility(isVisible: $isVisible)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PasswordVisibility &&
+            (identical(other.isVisible, isVisible) ||
+                other.isVisible == isVisible));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isVisible);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PasswordVisibilityCopyWith<_$_PasswordVisibility> get copyWith =>
+      __$$_PasswordVisibilityCopyWithImpl<_$_PasswordVisibility>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() failed,
+    required TResult Function(bool isVisible) passwordVisibility,
+  }) {
+    return passwordVisibility(isVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? failed,
+    TResult? Function(bool isVisible)? passwordVisibility,
+  }) {
+    return passwordVisibility?.call(isVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? failed,
+    TResult Function(bool isVisible)? passwordVisibility,
+    required TResult orElse(),
+  }) {
+    if (passwordVisibility != null) {
+      return passwordVisibility(isVisible);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failed value) failed,
+    required TResult Function(_PasswordVisibility value) passwordVisibility,
+  }) {
+    return passwordVisibility(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failed value)? failed,
+    TResult? Function(_PasswordVisibility value)? passwordVisibility,
+  }) {
+    return passwordVisibility?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failed value)? failed,
+    TResult Function(_PasswordVisibility value)? passwordVisibility,
+    required TResult orElse(),
+  }) {
+    if (passwordVisibility != null) {
+      return passwordVisibility(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PasswordVisibility implements LoginState {
+  const factory _PasswordVisibility(final bool isVisible) =
+      _$_PasswordVisibility;
+
+  bool get isVisible;
+  @JsonKey(ignore: true)
+  _$$_PasswordVisibilityCopyWith<_$_PasswordVisibility> get copyWith =>
+      throw _privateConstructorUsedError;
 }

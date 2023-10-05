@@ -52,7 +52,28 @@ class _PageState extends State<_Page> {
                 );
               },
             ),
-
+            TextFormField(
+              decoration: InputDecoration(labelText: 'Username'),
+            ),
+            BlocBuilder<LoginBloc, LoginState>(
+              buildWhen: (_, state) => state.mapOrNull(passwordVisibility: (_) => true) ?? false,
+              builder: (context, state) {
+                final bool isVisible = state.maybeMap(
+                  passwordVisibility: (_) => _.isVisible,
+                  orElse: () => true,
+                );
+                return TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    suffixIcon: IconButton(
+                      onPressed: () => bloc.add(LoginEvent.passwordVisibilityChanged(isVisible: !isVisible)),
+                      icon: Icon(isVisible ? Icons.visibility_off : Icons.visibility),
+                    ),
+                  ),
+                  obscureText: isVisible,
+                );
+              },
+            ),
           ],
         ),
       ),

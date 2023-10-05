@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
 
 abstract class MovieTheme {
-  const MovieTheme();
+  abstract Brightness brightness;
 
-  final Color background = Colors.red;
+  final InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
+    border: OutlineInputBorder(),
+  );
 }
 
 class LightTheme extends MovieTheme {
-  const LightTheme();
-
   @override
-  Color get background => Colors.blue;
+  Brightness brightness = Brightness.light;
 }
 
 class DarkTheme extends MovieTheme {
-  const DarkTheme();
+  @override
+  Brightness brightness = Brightness.dark;
 }
 
 extension MovieThemex on MovieTheme {
   ThemeData getThemeData() {
-    return ThemeData();
+    return ThemeData(
+      brightness: brightness,
+      inputDecorationTheme: inputDecorationTheme,
+    );
   }
 }
