@@ -37,8 +37,7 @@ class LocalAccountProvider {
     return Session.fromJson(jsonDecode(data));
   }
 
-  @preResolve
-  Future clear() async {
+  Future<void> clear() async {
     await _box.clear();
   }
 }

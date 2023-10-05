@@ -14,6 +14,8 @@ class AuthRepository {
 
   bool isLogin() => _localAuthProvider.getSession() != null;
 
+  Future<void> clearCache() => _localAuthProvider.clear();
+
   Future<Session> createGuestSession() async {
     final sessionId = await _authProvider.createGuestSession();
     final session = Session(id: sessionId, isGuest: true);

@@ -11,5 +11,7 @@ class AuthMapper {
     await _authRepository.ensureInitialized();
   }
 
+  Future<void> clearCache() => _authRepository.clearCache();
+
   bool isLogin() => _authRepository.isLogin();
 }
