@@ -17,33 +17,44 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-class _Page extends StatelessWidget {
+class _Page extends StatefulWidget {
   const _Page({Key? key}) : super(key: key);
+
+  @override
+  State<_Page> createState() => _PageState();
+}
+
+class _PageState extends State<_Page> {
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<LoginBloc>();
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: () => bloc.add(LoginEvent.tokenRequested()),
-            child: Text('login'),
-          ),
-          BlocBuilder<LoginBloc, LoginState>(
-            builder: (context, state) {
-              return Text(
-                state.maybeMap(
-                  failed: (_) => 'failed',
-                  success: (_) => 'success',
-                  orElse: () => '',
-                ),
-              );
-            },
-          ),
-        ],
+      body: Form(
+        key: _formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => bloc.add(LoginEvent.tokenRequested()),
+              child: Text('login'),
+            ),
+            BlocBuilder<LoginBloc, LoginState>(
+              builder: (context, state) {
+                return Text(
+                  state.maybeMap(
+                    failed: (_) => 'failed',
+                    success: (_) => 'success',
+                    orElse: () => '',
+                  ),
+                );
+              },
+            ),
+
+          ],
+        ),
       ),
     );
   }
