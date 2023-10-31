@@ -23,6 +23,7 @@ extension MovieThemex on MovieTheme {
     return ThemeData(
       brightness: brightness,
       inputDecorationTheme: inputDecorationTheme,
+      useMaterial3: true,
     );
   }
 }
