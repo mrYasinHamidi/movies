@@ -1,5 +1,5 @@
+import 'package:domain/domain.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movies/auth/infrastructure/repositories/auth_repository.dart';
 
 @lazySingleton
 class AuthMapper {

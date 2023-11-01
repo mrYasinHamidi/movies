@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 
-@singleton
 class Request {
   final Dio _dio = Dio(BaseOptions(baseUrl: 'https://api.themoviedb.org/3/'));
   final String _key = '5ac2a4d5e1a55902993e0b35793c149b';

@@ -1,14 +1,14 @@
-name: domain
+name: core
 description: A new Flutter project.
 version: 0.0.1
-publish_to: none
+homepage:
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
-  equatable: ^2.0.5
+  dio: ^5.3.3
   flutter:
     sdk: flutter
 

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movies/auth/infrastructure/repositories/auth_repository.dart';
 import 'package:movies/router/app_router.dart';
 
 part 'welcome_event.dart';

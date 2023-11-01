@@ -1,12 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:injectable/injectable.dart';
-import 'package:movies/auth/domain/session/session.dart';
+import 'package:hive/hive.dart';
 
-@lazySingleton
-class LocalAccountProvider {
+import '../models/session_model.dart';
+
+class AuthLocalService {
   late final FlutterSecureStorage _secureStorage;
   late final Box _box;
   final _encryptionKey = 'encryptionKey';
@@ -25,16 +24,16 @@ class LocalAccountProvider {
     _box = await Hive.openBox(_accountBoxKey, encryptionCipher: HiveAesCipher(base64Url.decode(encryptionKey)));
   }
 
-  Future<void> saveSession(Session session) async {
+  Future<void> saveSession(SessionModel session) async {
     return _box.put(_sessionKey, jsonEncode(session.toJson()));
   }
 
-  Session? getSession() {
+  SessionModel? getSession() {
     final data = _box.get(_sessionKey);
 
     if (data == null) return null;
 
-    return Session.fromJson(jsonDecode(data));
+    return SessionModel.fromJson(jsonDecode(data));
   }
 
   Future<void> clear() async {

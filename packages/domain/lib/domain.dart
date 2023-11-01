@@ -1,3 +1,4 @@
 library domain;
 
-export 'auth/repositories/auth_repository.dart';
+export 'src/auth/repository/auth_repository.dart';
+export 'src/auth/entities/session.dart';

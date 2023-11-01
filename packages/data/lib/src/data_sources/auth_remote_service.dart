@@ -1,19 +1,17 @@
-import 'package:injectable/injectable.dart';
-import 'package:movies/common/request.dart';
+import 'package:core/core.dart';
 
-@lazySingleton
-class ApiAuthProvider {
-  final Request _request;
+class AuthRemoteService {
+  final Request request;
 
-  ApiAuthProvider(this._request);
+  const AuthRemoteService({required this.request});
 
   Future<String> createGuestSession() async {
-    final result = await _request.get('authentication/guest_session/new');
+    final result = await request.get('authentication/guest_session/new');
     return result.data['guest_session_id'];
   }
 
   Future<String> createToken() async {
-    final res = await _request.get('authentication/token/new');
+    final res = await request.get('authentication/token/new');
     return res.data['request_token'];
   }
 
@@ -26,7 +24,7 @@ class ApiAuthProvider {
     String password,
     String token,
   ) async {
-    final res = await _request.post(
+    final res = await request.post(
       'authentication/token/validate_with_login',
       queryParameters: {
         'username': username,
@@ -38,7 +36,7 @@ class ApiAuthProvider {
   }
 
   Future<String> createSession(String token) async {
-    final res = await _request.post(
+    final res = await request.post(
       'authentication/session/new',
       data: {'request_token': token},
     );
@@ -46,7 +44,7 @@ class ApiAuthProvider {
   }
 
   Future<dynamic> deleteSession(String sessionId) async {
-    final result = _request.delete(
+    final result = request.delete(
       'authentication/session',
       data: {'session_id': sessionId},
     );

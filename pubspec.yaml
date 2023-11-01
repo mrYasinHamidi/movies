@@ -15,10 +15,11 @@ dependencies:
     path: packages/domain
   data:
     path: packages/data
+  core:
+    path: packages/core
   cupertino_icons: ^1.0.2
   get_it: ^7.2.0
   flutter_bloc: ^8.1.1
-  dio: ^4.0.6
   cached_network_image: ^3.2.3
   injectable: ^2.1.1
   auto_route: ^6.2.0
@@ -28,6 +29,7 @@ dependencies:
   flutter_secure_storage: ^9.0.0
   hive_flutter: ^1.1.0
   json_annotation: ^4.8.1
+  dio: ^5.3.3
 
 dev_dependencies:
   flutter_test:
