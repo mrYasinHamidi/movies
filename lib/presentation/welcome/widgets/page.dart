@@ -1,11 +1,11 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movies/auth/presentation/welcome/bloc/welcome_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:movies/presentation/welcome/bloc/welcome_bloc.dart';
 import 'package:movies/router/app_router.dart';
+import 'package:movies/router/routes_name.dart';
 
-@RoutePage()
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -32,7 +32,7 @@ class _Page extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                GetIt.I.get<AppRouter>().push(const LoginRoute());
+                context.go(RoutesName.login);
               },
               child: const Text('Login'),
             ),

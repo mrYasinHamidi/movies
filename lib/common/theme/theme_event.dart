@@ -1,6 +1,12 @@
 part of 'theme_bloc.dart';
 
-@freezed
-class ThemeEvent with _$ThemeEvent {
-  const factory ThemeEvent.themeChanged(bool isDark) = _ThemeChanged;
+
+sealed class ThemeEvent {
+  const ThemeEvent();
+}
+
+class ThemeChanged extends ThemeEvent {
+  final ThemeType themeType;
+
+  const ThemeChanged({required this.themeType});
 }

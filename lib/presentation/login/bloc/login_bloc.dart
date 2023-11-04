@@ -35,14 +35,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(const LoginState.loading());
       final token = await _repository.createToken();
       launchUrl(Uri.parse(_repository.getValidationUrl(token)));
-      IntentHandler.instance.listenOnce(
-        tag: 'login',
-        onSuccess: (response) {
-          print(response);
-          add(LoginEvent.tokenChecked(checkingResponse: response));
-        },
-        onFail: () {},
-      );
+      // IntentHandler.instance.listenOnce(
+      //   tag: 'login',
+      //   onSuccess: (response) {
+      //     print(response);
+      //     add(LoginEvent.tokenChecked(checkingResponse: response));
+      //   },
+      //   onFail: () {},
+      // );
     } catch (e) {
       emit(const LoginState.failed());
     }

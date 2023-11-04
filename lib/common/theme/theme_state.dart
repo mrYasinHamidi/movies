@@ -1,8 +1,13 @@
 part of 'theme_bloc.dart';
 
-@freezed
-class ThemeState with _$ThemeState {
-  const factory ThemeState.initial(MovieTheme theme) = _Initial;
+class ThemeState {
+  final MovieTheme theme;
 
-  const factory ThemeState.themeState(MovieTheme theme) = _ThemeState;
+  const ThemeState({required this.theme});
+
+  const ThemeState.initial() : this(theme: const LightTheme());
+
+  const ThemeState.dark() : this(theme: const LightTheme());
+
+  const ThemeState.light() : this(theme: const DarkTheme());
 }

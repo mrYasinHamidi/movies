@@ -84,25 +84,25 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
 }
 
 /// @nodoc
-abstract class _$$_TokenRequestedCopyWith<$Res> {
-  factory _$$_TokenRequestedCopyWith(
-          _$_TokenRequested value, $Res Function(_$_TokenRequested) then) =
-      __$$_TokenRequestedCopyWithImpl<$Res>;
+abstract class _$$TokenRequestedImplCopyWith<$Res> {
+  factory _$$TokenRequestedImplCopyWith(_$TokenRequestedImpl value,
+          $Res Function(_$TokenRequestedImpl) then) =
+      __$$TokenRequestedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_TokenRequestedCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_TokenRequested>
-    implements _$$_TokenRequestedCopyWith<$Res> {
-  __$$_TokenRequestedCopyWithImpl(
-      _$_TokenRequested _value, $Res Function(_$_TokenRequested) _then)
+class __$$TokenRequestedImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$TokenRequestedImpl>
+    implements _$$TokenRequestedImplCopyWith<$Res> {
+  __$$TokenRequestedImplCopyWithImpl(
+      _$TokenRequestedImpl _value, $Res Function(_$TokenRequestedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_TokenRequested implements _TokenRequested {
-  const _$_TokenRequested();
+class _$TokenRequestedImpl implements _TokenRequested {
+  const _$TokenRequestedImpl();
 
   @override
   String toString() {
@@ -112,7 +112,7 @@ class _$_TokenRequested implements _TokenRequested {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_TokenRequested);
+        (other.runtimeType == runtimeType && other is _$TokenRequestedImpl);
   }
 
   @override
@@ -191,24 +191,24 @@ class _$_TokenRequested implements _TokenRequested {
 }
 
 abstract class _TokenRequested implements LoginEvent {
-  const factory _TokenRequested() = _$_TokenRequested;
+  const factory _TokenRequested() = _$TokenRequestedImpl;
 }
 
 /// @nodoc
-abstract class _$$_TokenCheckedCopyWith<$Res> {
-  factory _$$_TokenCheckedCopyWith(
-          _$_TokenChecked value, $Res Function(_$_TokenChecked) then) =
-      __$$_TokenCheckedCopyWithImpl<$Res>;
+abstract class _$$TokenCheckedImplCopyWith<$Res> {
+  factory _$$TokenCheckedImplCopyWith(
+          _$TokenCheckedImpl value, $Res Function(_$TokenCheckedImpl) then) =
+      __$$TokenCheckedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Uri? checkingResponse});
 }
 
 /// @nodoc
-class __$$_TokenCheckedCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_TokenChecked>
-    implements _$$_TokenCheckedCopyWith<$Res> {
-  __$$_TokenCheckedCopyWithImpl(
-      _$_TokenChecked _value, $Res Function(_$_TokenChecked) _then)
+class __$$TokenCheckedImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$TokenCheckedImpl>
+    implements _$$TokenCheckedImplCopyWith<$Res> {
+  __$$TokenCheckedImplCopyWithImpl(
+      _$TokenCheckedImpl _value, $Res Function(_$TokenCheckedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -216,7 +216,7 @@ class __$$_TokenCheckedCopyWithImpl<$Res>
   $Res call({
     Object? checkingResponse = freezed,
   }) {
-    return _then(_$_TokenChecked(
+    return _then(_$TokenCheckedImpl(
       checkingResponse: freezed == checkingResponse
           ? _value.checkingResponse
           : checkingResponse // ignore: cast_nullable_to_non_nullable
@@ -227,8 +227,8 @@ class __$$_TokenCheckedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TokenChecked implements _TokenChecked {
-  const _$_TokenChecked({required this.checkingResponse});
+class _$TokenCheckedImpl implements _TokenChecked {
+  const _$TokenCheckedImpl({required this.checkingResponse});
 
   @override
   final Uri? checkingResponse;
@@ -242,7 +242,7 @@ class _$_TokenChecked implements _TokenChecked {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TokenChecked &&
+            other is _$TokenCheckedImpl &&
             (identical(other.checkingResponse, checkingResponse) ||
                 other.checkingResponse == checkingResponse));
   }
@@ -253,8 +253,8 @@ class _$_TokenChecked implements _TokenChecked {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TokenCheckedCopyWith<_$_TokenChecked> get copyWith =>
-      __$$_TokenCheckedCopyWithImpl<_$_TokenChecked>(this, _$identity);
+  _$$TokenCheckedImplCopyWith<_$TokenCheckedImpl> get copyWith =>
+      __$$TokenCheckedImplCopyWithImpl<_$TokenCheckedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -330,31 +330,31 @@ class _$_TokenChecked implements _TokenChecked {
 
 abstract class _TokenChecked implements LoginEvent {
   const factory _TokenChecked({required final Uri? checkingResponse}) =
-      _$_TokenChecked;
+      _$TokenCheckedImpl;
 
   Uri? get checkingResponse;
   @JsonKey(ignore: true)
-  _$$_TokenCheckedCopyWith<_$_TokenChecked> get copyWith =>
+  _$$TokenCheckedImplCopyWith<_$TokenCheckedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PasswordVisibilityChangedCopyWith<$Res> {
-  factory _$$_PasswordVisibilityChangedCopyWith(
-          _$_PasswordVisibilityChanged value,
-          $Res Function(_$_PasswordVisibilityChanged) then) =
-      __$$_PasswordVisibilityChangedCopyWithImpl<$Res>;
+abstract class _$$PasswordVisibilityChangedImplCopyWith<$Res> {
+  factory _$$PasswordVisibilityChangedImplCopyWith(
+          _$PasswordVisibilityChangedImpl value,
+          $Res Function(_$PasswordVisibilityChangedImpl) then) =
+      __$$PasswordVisibilityChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isVisible});
 }
 
 /// @nodoc
-class __$$_PasswordVisibilityChangedCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_PasswordVisibilityChanged>
-    implements _$$_PasswordVisibilityChangedCopyWith<$Res> {
-  __$$_PasswordVisibilityChangedCopyWithImpl(
-      _$_PasswordVisibilityChanged _value,
-      $Res Function(_$_PasswordVisibilityChanged) _then)
+class __$$PasswordVisibilityChangedImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$PasswordVisibilityChangedImpl>
+    implements _$$PasswordVisibilityChangedImplCopyWith<$Res> {
+  __$$PasswordVisibilityChangedImplCopyWithImpl(
+      _$PasswordVisibilityChangedImpl _value,
+      $Res Function(_$PasswordVisibilityChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -362,7 +362,7 @@ class __$$_PasswordVisibilityChangedCopyWithImpl<$Res>
   $Res call({
     Object? isVisible = null,
   }) {
-    return _then(_$_PasswordVisibilityChanged(
+    return _then(_$PasswordVisibilityChangedImpl(
       isVisible: null == isVisible
           ? _value.isVisible
           : isVisible // ignore: cast_nullable_to_non_nullable
@@ -373,8 +373,8 @@ class __$$_PasswordVisibilityChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PasswordVisibilityChanged implements _PasswordVisibilityChanged {
-  const _$_PasswordVisibilityChanged({required this.isVisible});
+class _$PasswordVisibilityChangedImpl implements _PasswordVisibilityChanged {
+  const _$PasswordVisibilityChangedImpl({required this.isVisible});
 
   @override
   final bool isVisible;
@@ -388,7 +388,7 @@ class _$_PasswordVisibilityChanged implements _PasswordVisibilityChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PasswordVisibilityChanged &&
+            other is _$PasswordVisibilityChangedImpl &&
             (identical(other.isVisible, isVisible) ||
                 other.isVisible == isVisible));
   }
@@ -399,9 +399,9 @@ class _$_PasswordVisibilityChanged implements _PasswordVisibilityChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PasswordVisibilityChangedCopyWith<_$_PasswordVisibilityChanged>
-      get copyWith => __$$_PasswordVisibilityChangedCopyWithImpl<
-          _$_PasswordVisibilityChanged>(this, _$identity);
+  _$$PasswordVisibilityChangedImplCopyWith<_$PasswordVisibilityChangedImpl>
+      get copyWith => __$$PasswordVisibilityChangedImplCopyWithImpl<
+          _$PasswordVisibilityChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -477,11 +477,11 @@ class _$_PasswordVisibilityChanged implements _PasswordVisibilityChanged {
 
 abstract class _PasswordVisibilityChanged implements LoginEvent {
   const factory _PasswordVisibilityChanged({required final bool isVisible}) =
-      _$_PasswordVisibilityChanged;
+      _$PasswordVisibilityChangedImpl;
 
   bool get isVisible;
   @JsonKey(ignore: true)
-  _$$_PasswordVisibilityChangedCopyWith<_$_PasswordVisibilityChanged>
+  _$$PasswordVisibilityChangedImplCopyWith<_$PasswordVisibilityChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -564,24 +564,25 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -591,7 +592,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -679,28 +680,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements LoginState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -710,7 +712,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -798,28 +800,29 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements LoginState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success();
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl();
 
   @override
   String toString() {
@@ -829,7 +832,7 @@ class _$_Success implements _Success {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Success);
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
@@ -917,27 +920,29 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements LoginState {
-  const factory _Success() = _$_Success;
+  const factory _Success() = _$SuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$_FailedCopyWith<$Res> {
-  factory _$$_FailedCopyWith(_$_Failed value, $Res Function(_$_Failed) then) =
-      __$$_FailedCopyWithImpl<$Res>;
+abstract class _$$FailedImplCopyWith<$Res> {
+  factory _$$FailedImplCopyWith(
+          _$FailedImpl value, $Res Function(_$FailedImpl) then) =
+      __$$FailedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_FailedCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_Failed>
-    implements _$$_FailedCopyWith<$Res> {
-  __$$_FailedCopyWithImpl(_$_Failed _value, $Res Function(_$_Failed) _then)
+class __$$FailedImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$FailedImpl>
+    implements _$$FailedImplCopyWith<$Res> {
+  __$$FailedImplCopyWithImpl(
+      _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Failed implements _Failed {
-  const _$_Failed();
+class _$FailedImpl implements _Failed {
+  const _$FailedImpl();
 
   @override
   String toString() {
@@ -947,7 +952,7 @@ class _$_Failed implements _Failed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Failed);
+        (other.runtimeType == runtimeType && other is _$FailedImpl);
   }
 
   @override
@@ -1035,24 +1040,24 @@ class _$_Failed implements _Failed {
 }
 
 abstract class _Failed implements LoginState {
-  const factory _Failed() = _$_Failed;
+  const factory _Failed() = _$FailedImpl;
 }
 
 /// @nodoc
-abstract class _$$_PasswordVisibilityCopyWith<$Res> {
-  factory _$$_PasswordVisibilityCopyWith(_$_PasswordVisibility value,
-          $Res Function(_$_PasswordVisibility) then) =
-      __$$_PasswordVisibilityCopyWithImpl<$Res>;
+abstract class _$$PasswordVisibilityImplCopyWith<$Res> {
+  factory _$$PasswordVisibilityImplCopyWith(_$PasswordVisibilityImpl value,
+          $Res Function(_$PasswordVisibilityImpl) then) =
+      __$$PasswordVisibilityImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isVisible});
 }
 
 /// @nodoc
-class __$$_PasswordVisibilityCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_PasswordVisibility>
-    implements _$$_PasswordVisibilityCopyWith<$Res> {
-  __$$_PasswordVisibilityCopyWithImpl(
-      _$_PasswordVisibility _value, $Res Function(_$_PasswordVisibility) _then)
+class __$$PasswordVisibilityImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$PasswordVisibilityImpl>
+    implements _$$PasswordVisibilityImplCopyWith<$Res> {
+  __$$PasswordVisibilityImplCopyWithImpl(_$PasswordVisibilityImpl _value,
+      $Res Function(_$PasswordVisibilityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1060,7 +1065,7 @@ class __$$_PasswordVisibilityCopyWithImpl<$Res>
   $Res call({
     Object? isVisible = null,
   }) {
-    return _then(_$_PasswordVisibility(
+    return _then(_$PasswordVisibilityImpl(
       null == isVisible
           ? _value.isVisible
           : isVisible // ignore: cast_nullable_to_non_nullable
@@ -1071,8 +1076,8 @@ class __$$_PasswordVisibilityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PasswordVisibility implements _PasswordVisibility {
-  const _$_PasswordVisibility(this.isVisible);
+class _$PasswordVisibilityImpl implements _PasswordVisibility {
+  const _$PasswordVisibilityImpl(this.isVisible);
 
   @override
   final bool isVisible;
@@ -1086,7 +1091,7 @@ class _$_PasswordVisibility implements _PasswordVisibility {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PasswordVisibility &&
+            other is _$PasswordVisibilityImpl &&
             (identical(other.isVisible, isVisible) ||
                 other.isVisible == isVisible));
   }
@@ -1097,8 +1102,8 @@ class _$_PasswordVisibility implements _PasswordVisibility {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PasswordVisibilityCopyWith<_$_PasswordVisibility> get copyWith =>
-      __$$_PasswordVisibilityCopyWithImpl<_$_PasswordVisibility>(
+  _$$PasswordVisibilityImplCopyWith<_$PasswordVisibilityImpl> get copyWith =>
+      __$$PasswordVisibilityImplCopyWithImpl<_$PasswordVisibilityImpl>(
           this, _$identity);
 
   @override
@@ -1184,10 +1189,10 @@ class _$_PasswordVisibility implements _PasswordVisibility {
 
 abstract class _PasswordVisibility implements LoginState {
   const factory _PasswordVisibility(final bool isVisible) =
-      _$_PasswordVisibility;
+      _$PasswordVisibilityImpl;
 
   bool get isVisible;
   @JsonKey(ignore: true)
-  _$$_PasswordVisibilityCopyWith<_$_PasswordVisibility> get copyWith =>
+  _$$PasswordVisibilityImplCopyWith<_$PasswordVisibilityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

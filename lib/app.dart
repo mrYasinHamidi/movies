@@ -28,14 +28,14 @@ class _App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeBloc, ThemeState>(
-      buildWhen: (_, state) => state.mapOrNull(themeState: (_) => true) ?? false,
       builder: (_, state) {
         return MaterialApp.router(
-          routerConfig: GetIt.I.get<AppRouter>().config(
-            deepLinkBuilder: (deepLink) {
-              return DeepLink([isLogin ? const ShowcaseRoute() : const WelcomeRoute()]);
-            },
-          ),
+          // routerConfig: GetIt.I.get<AppRouter>().config(
+          //   deepLinkBuilder: (deepLink) {
+          //     return DeepLink([isLogin ? const ShowcaseRoute() : const WelcomeRoute()]);
+          //   },
+          // ),
+          routerConfig: AppRouter().router,
           theme: state.theme.getThemeData(),
         );
       },

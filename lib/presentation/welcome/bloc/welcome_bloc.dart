@@ -43,7 +43,7 @@ class WelcomeBloc extends Bloc<WelcomeEvent, WelcomeState> {
     try {
       final session = await _repository.createGuestSession();
       print(session.id);
-      AppRouter.get().replace(ShowcaseRoute());
+      // AppRouter.get().replace(ShowcaseRoute());
     } catch (e) {}
   }
 }

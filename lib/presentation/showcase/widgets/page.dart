@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movies/main.dart';
-import 'package:movies/movie/presentation/showcase/bloc/showcase_bloc.dart';
+import 'package:movies/presentation/showcase/bloc/showcase_bloc.dart';
 
 @RoutePage()
 class ShowcasePage extends StatelessWidget {

@@ -81,25 +81,25 @@ class _$WelcomeEventCopyWithImpl<$Res, $Val extends WelcomeEvent>
 }
 
 /// @nodoc
-abstract class _$$_LoginSkippedCopyWith<$Res> {
-  factory _$$_LoginSkippedCopyWith(
-          _$_LoginSkipped value, $Res Function(_$_LoginSkipped) then) =
-      __$$_LoginSkippedCopyWithImpl<$Res>;
+abstract class _$$LoginSkippedImplCopyWith<$Res> {
+  factory _$$LoginSkippedImplCopyWith(
+          _$LoginSkippedImpl value, $Res Function(_$LoginSkippedImpl) then) =
+      __$$LoginSkippedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoginSkippedCopyWithImpl<$Res>
-    extends _$WelcomeEventCopyWithImpl<$Res, _$_LoginSkipped>
-    implements _$$_LoginSkippedCopyWith<$Res> {
-  __$$_LoginSkippedCopyWithImpl(
-      _$_LoginSkipped _value, $Res Function(_$_LoginSkipped) _then)
+class __$$LoginSkippedImplCopyWithImpl<$Res>
+    extends _$WelcomeEventCopyWithImpl<$Res, _$LoginSkippedImpl>
+    implements _$$LoginSkippedImplCopyWith<$Res> {
+  __$$LoginSkippedImplCopyWithImpl(
+      _$LoginSkippedImpl _value, $Res Function(_$LoginSkippedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoginSkipped implements _LoginSkipped {
-  const _$_LoginSkipped();
+class _$LoginSkippedImpl implements _LoginSkipped {
+  const _$LoginSkippedImpl();
 
   @override
   String toString() {
@@ -109,7 +109,7 @@ class _$_LoginSkipped implements _LoginSkipped {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoginSkipped);
+        (other.runtimeType == runtimeType && other is _$LoginSkippedImpl);
   }
 
   @override
@@ -185,29 +185,29 @@ class _$_LoginSkipped implements _LoginSkipped {
 }
 
 abstract class _LoginSkipped implements WelcomeEvent {
-  const factory _LoginSkipped() = _$_LoginSkipped;
+  const factory _LoginSkipped() = _$LoginSkippedImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignupRequestedCopyWith<$Res> {
-  factory _$$_SignupRequestedCopyWith(
-          _$_SignupRequested value, $Res Function(_$_SignupRequested) then) =
-      __$$_SignupRequestedCopyWithImpl<$Res>;
+abstract class _$$SignupRequestedImplCopyWith<$Res> {
+  factory _$$SignupRequestedImplCopyWith(_$SignupRequestedImpl value,
+          $Res Function(_$SignupRequestedImpl) then) =
+      __$$SignupRequestedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignupRequestedCopyWithImpl<$Res>
-    extends _$WelcomeEventCopyWithImpl<$Res, _$_SignupRequested>
-    implements _$$_SignupRequestedCopyWith<$Res> {
-  __$$_SignupRequestedCopyWithImpl(
-      _$_SignupRequested _value, $Res Function(_$_SignupRequested) _then)
+class __$$SignupRequestedImplCopyWithImpl<$Res>
+    extends _$WelcomeEventCopyWithImpl<$Res, _$SignupRequestedImpl>
+    implements _$$SignupRequestedImplCopyWith<$Res> {
+  __$$SignupRequestedImplCopyWithImpl(
+      _$SignupRequestedImpl _value, $Res Function(_$SignupRequestedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignupRequested implements _SignupRequested {
-  const _$_SignupRequested();
+class _$SignupRequestedImpl implements _SignupRequested {
+  const _$SignupRequestedImpl();
 
   @override
   String toString() {
@@ -217,7 +217,7 @@ class _$_SignupRequested implements _SignupRequested {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignupRequested);
+        (other.runtimeType == runtimeType && other is _$SignupRequestedImpl);
   }
 
   @override
@@ -293,29 +293,29 @@ class _$_SignupRequested implements _SignupRequested {
 }
 
 abstract class _SignupRequested implements WelcomeEvent {
-  const factory _SignupRequested() = _$_SignupRequested;
+  const factory _SignupRequested() = _$SignupRequestedImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoginRequestedCopyWith<$Res> {
-  factory _$$_LoginRequestedCopyWith(
-          _$_LoginRequested value, $Res Function(_$_LoginRequested) then) =
-      __$$_LoginRequestedCopyWithImpl<$Res>;
+abstract class _$$LoginRequestedImplCopyWith<$Res> {
+  factory _$$LoginRequestedImplCopyWith(_$LoginRequestedImpl value,
+          $Res Function(_$LoginRequestedImpl) then) =
+      __$$LoginRequestedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoginRequestedCopyWithImpl<$Res>
-    extends _$WelcomeEventCopyWithImpl<$Res, _$_LoginRequested>
-    implements _$$_LoginRequestedCopyWith<$Res> {
-  __$$_LoginRequestedCopyWithImpl(
-      _$_LoginRequested _value, $Res Function(_$_LoginRequested) _then)
+class __$$LoginRequestedImplCopyWithImpl<$Res>
+    extends _$WelcomeEventCopyWithImpl<$Res, _$LoginRequestedImpl>
+    implements _$$LoginRequestedImplCopyWith<$Res> {
+  __$$LoginRequestedImplCopyWithImpl(
+      _$LoginRequestedImpl _value, $Res Function(_$LoginRequestedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoginRequested implements _LoginRequested {
-  const _$_LoginRequested();
+class _$LoginRequestedImpl implements _LoginRequested {
+  const _$LoginRequestedImpl();
 
   @override
   String toString() {
@@ -325,7 +325,7 @@ class _$_LoginRequested implements _LoginRequested {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoginRequested);
+        (other.runtimeType == runtimeType && other is _$LoginRequestedImpl);
   }
 
   @override
@@ -401,7 +401,7 @@ class _$_LoginRequested implements _LoginRequested {
 }
 
 abstract class _LoginRequested implements WelcomeEvent {
-  const factory _LoginRequested() = _$_LoginRequested;
+  const factory _LoginRequested() = _$LoginRequestedImpl;
 }
 
 /// @nodoc
@@ -471,24 +471,25 @@ class _$WelcomeStateCopyWithImpl<$Res, $Val extends WelcomeState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$WelcomeStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$WelcomeStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -498,7 +499,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -574,28 +575,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements WelcomeState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$WelcomeStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$WelcomeStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -605,7 +607,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -681,28 +683,29 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements WelcomeState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$WelcomeStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$WelcomeStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success();
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl();
 
   @override
   String toString() {
@@ -712,7 +715,7 @@ class _$_Success implements _Success {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Success);
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
@@ -788,5 +791,5 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements WelcomeState {
-  const factory _Success() = _$_Success;
+  const factory _Success() = _$SuccessImpl;
 }
