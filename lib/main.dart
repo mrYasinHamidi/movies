@@ -27,7 +27,6 @@ class Setup {
 
   static void logout() async {
     GetIt.I.get<AuthRepository>().clearCache();
-    // GetIt.I.get<AppRouter>().pushAndPopUntil(const WelcomeRoute(), predicate: (route) => true);
-    // GetIt.I.get<AppRouter>().router.;
+    GetIt.I.get<AppRouter>().pushAndPopUntil(const WelcomeRoute(), predicate: (route) => true);
   }
 }

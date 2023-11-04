@@ -34,7 +34,7 @@ packages:
     source: hosted
     version: "2.11.0"
   auto_route:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: auto_route
       sha256: "9a2579b115cc42eb3c787c86deae2ffc4128dc6f1af976580e7f8e4bb7f803c6"
@@ -421,14 +421,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  go_router:
-    dependency: "direct main"
-    description:
-      name: go_router
-      sha256: "5098760d7478aabfe682a462bf121d61bc5dbe5df5aac8dad733564a0aee33bc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "12.1.0"
   graphs:
     dependency: transitive
     description:

@@ -30,12 +30,11 @@ class _App extends StatelessWidget {
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (_, state) {
         return MaterialApp.router(
-          // routerConfig: GetIt.I.get<AppRouter>().config(
-          //   deepLinkBuilder: (deepLink) {
-          //     return DeepLink([isLogin ? const ShowcaseRoute() : const WelcomeRoute()]);
-          //   },
-          // ),
-          routerConfig: AppRouter().router,
+          routerConfig: GetIt.I.get<AppRouter>().config(
+            deepLinkBuilder: (deepLink) {
+              return DeepLink([isLogin ? const ShowcaseRoute() : const WelcomeRoute()]);
+            },
+          ),
           theme: state.theme.getThemeData(),
         );
       },
