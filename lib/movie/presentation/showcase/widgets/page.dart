@@ -14,7 +14,7 @@ class ShowcasePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetIt.I.get<ShowcaseBloc>(),
-      child: _Page(),
+      child: const _Page(),
     );
   }
 }
@@ -33,7 +33,7 @@ class _Page extends StatelessWidget {
             Text(
               repo.getSession().toString(),
             ),
-            ElevatedButton(
+            const ElevatedButton(
               onPressed: Setup.logout,
               child: Text('logout'),
             ),

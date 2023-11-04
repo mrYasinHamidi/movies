@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -32,7 +32,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) async {
     try {
-      emit(LoginState.loading());
+      emit(const LoginState.loading());
       final token = await _repository.createToken();
       launchUrl(Uri.parse(_repository.getValidationUrl(token)));
       IntentHandler.instance.listenOnce(
@@ -44,7 +44,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         onFail: () {},
       );
     } catch (e) {
-      emit(LoginState.failed());
+      emit(const LoginState.failed());
     }
   }
 
@@ -55,9 +55,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     if (event.checkingResponse != null &&
         event.checkingResponse!.path == '/login_callback' &&
         event.checkingResponse!.queryParameters['approved'] != null) {
-      emit(LoginState.success());
+      emit(const LoginState.success());
     } else {
-      emit(LoginState.failed());
+      emit(const LoginState.failed());
     }
   }
 

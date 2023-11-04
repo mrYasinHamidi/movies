@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetIt.I.get<LoginBloc>(),
-      child: _Page(),
+      child: const _Page(),
     );
   }
 }
@@ -38,8 +38,8 @@ class _PageState extends State<_Page> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => bloc.add(LoginEvent.tokenRequested()),
-              child: Text('login'),
+              onPressed: () => bloc.add(const LoginEvent.tokenRequested()),
+              child: const Text('login'),
             ),
             BlocBuilder<LoginBloc, LoginState>(
               builder: (context, state) {
@@ -53,7 +53,7 @@ class _PageState extends State<_Page> {
               },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Username'),
+              decoration: const InputDecoration(labelText: 'Username'),
             ),
             BlocBuilder<LoginBloc, LoginState>(
               buildWhen: (_, state) => state.mapOrNull(passwordVisibility: (_) => true) ?? false,

@@ -13,7 +13,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetIt.I.get<WelcomeBloc>(),
-      child: _Page(),
+      child: const _Page(),
     );
   }
 }
@@ -32,14 +32,14 @@ class _Page extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                GetIt.I.get<AppRouter>().push(LoginRoute());
+                GetIt.I.get<AppRouter>().push(const LoginRoute());
               },
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
-            ElevatedButton(onPressed: () {}, child: Text('Sign Up')),
+            ElevatedButton(onPressed: () {}, child: const Text('Sign Up')),
             ElevatedButton(
-              onPressed: () => bloc.add(WelcomeEvent.loginSkipped()),
-              child: Text('Continue Without Account'),
+              onPressed: () => bloc.add(const WelcomeEvent.loginSkipped()),
+              child: const Text('Continue Without Account'),
             ),
           ],
         ),
