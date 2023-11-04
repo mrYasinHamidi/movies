@@ -15,12 +15,6 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    ShowcaseRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ShowcasePage(),
-      );
-    },
     WelcomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -33,21 +27,13 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const LoginPage(),
       );
     },
+    ShowcaseRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ShowcasePage(),
+      );
+    },
   };
-}
-
-/// generated route for
-/// [ShowcasePage]
-class ShowcaseRoute extends PageRouteInfo<void> {
-  const ShowcaseRoute({List<PageRouteInfo>? children})
-      : super(
-          ShowcaseRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ShowcaseRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -74,6 +60,20 @@ class LoginRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LoginRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ShowcasePage]
+class ShowcaseRoute extends PageRouteInfo<void> {
+  const ShowcaseRoute({List<PageRouteInfo>? children})
+      : super(
+          ShowcaseRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ShowcaseRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

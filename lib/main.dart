@@ -2,10 +2,10 @@ import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:movies/router/app_router.dart';
+import 'package:movies/common/injection/injection.dart';
+import 'package:movies/common/router/app_router.dart';
 
 import 'app.dart';
-import 'injection/injection.dart';
 
 void main() async {
   await Setup.initialize();

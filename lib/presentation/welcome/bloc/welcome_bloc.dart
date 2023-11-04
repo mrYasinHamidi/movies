@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movies/router/app_router.dart';
+import 'package:movies/common/router/app_router.dart';
 
 part 'welcome_event.dart';
 
@@ -42,8 +42,7 @@ class WelcomeBloc extends Bloc<WelcomeEvent, WelcomeState> {
   ) async {
     try {
       final session = await _repository.createGuestSession();
-      print(session.id);
-      // AppRouter.get().replace(ShowcaseRoute());
+      AppRouter.get().replace(const ShowcaseRoute());
     } catch (e) {}
   }
 }

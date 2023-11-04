@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movies/common/theme/theme.dart';
 import 'package:movies/common/theme/theme_bloc.dart';
-import 'package:movies/router/app_router.dart';
+import 'package:movies/common/router/app_router.dart';
 
 class App extends StatelessWidget {
   final bool isLogin;

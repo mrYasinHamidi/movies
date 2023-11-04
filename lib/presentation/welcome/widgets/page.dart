@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movies/presentation/welcome/bloc/welcome_bloc.dart';
-import 'package:movies/router/app_router.dart';
+import 'package:movies/common/router/app_router.dart';
 
+@RoutePage()
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
