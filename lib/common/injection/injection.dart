@@ -27,5 +27,5 @@ abstract class ThirdPartyModule {
   AuthRemoteService get authRemoteService => AuthRemoteService(request: request);
 
   @lazySingleton
-  Request get request => Request();
+  Request get request => Request(baseUrl: '');
 }

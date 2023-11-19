@@ -1,3 +1,3 @@
 library core;
 
-export 'src/request.dart';
+export 'src/request/request.dart';
