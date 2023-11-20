@@ -11,10 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  domain:
-    path: packages/domain
-  data:
-    path: packages/data
+  authentication:
+    path: packages/authentication
   core:
     path: packages/core
   cupertino_icons: ^1.0.2

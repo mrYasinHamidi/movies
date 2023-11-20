@@ -1,4 +1,3 @@
-import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -18,11 +17,11 @@ void main() async {
 
 class Setup {
   static Future<void> initialize() async {
-    await Hive.initFlutter();
     WidgetsFlutterBinding.ensureInitialized();
-    configureDependencies();
 
-    await GetIt.I.get<AuthRepository>().ensureInitialized();
+    await Hive.initFlutter();
+    await configureDependencies();
+
   }
 
   static void logout() async {

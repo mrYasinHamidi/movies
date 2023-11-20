@@ -7,23 +7,19 @@ import 'package:movies/common/theme/theme_bloc.dart';
 import 'package:movies/common/router/app_router.dart';
 
 class App extends StatelessWidget {
-  final bool isLogin;
-
-  const App({Key? key, required this.isLogin}) : super(key: key);
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetIt.I.get<ThemeBloc>(),
-      child: _App(isLogin: isLogin),
+      child: _App(),
     );
   }
 }
 
 class _App extends StatelessWidget {
-  final bool isLogin;
-
-  const _App({Key? key, required this.isLogin}) : super(key: key);
+  const _App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +28,7 @@ class _App extends StatelessWidget {
         return MaterialApp.router(
           routerConfig: GetIt.I.get<AppRouter>().config(
             deepLinkBuilder: (deepLink) {
-              return DeepLink([isLogin ? const ShowcaseRoute() : const WelcomeRoute()]);
+              return DeepLink([false ? const ShowcaseRoute() : const WelcomeRoute()]);
             },
           ),
           theme: state.theme.getThemeData(),
