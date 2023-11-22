@@ -8,11 +8,7 @@ import 'app.dart';
 
 void main() async {
   await Setup.initialize();
-  runApp(
-    App(
-      isLogin: GetIt.I.get<AuthRepository>().isLogin(),
-    ),
-  );
+  runApp(App());
 }
 
 class Setup {
@@ -21,11 +17,10 @@ class Setup {
 
     await Hive.initFlutter();
     await configureDependencies();
-
   }
 
   static void logout() async {
-    GetIt.I.get<AuthRepository>().clearCache();
+    // GetIt.I.get<AuthRepository>().clearCache();
     GetIt.I.get<AppRouter>().pushAndPopUntil(const WelcomeRoute(), predicate: (route) => true);
   }
 }
