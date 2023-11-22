@@ -5,10 +5,10 @@ import 'package:authentication/src/domain/repositories/auth_repository.dart';
 import 'package:core/core.dart';
 import 'package:dartz/dartz.dart';
 
-class CreateGuestSessionUseCase extends UseCase<void, DeleteSessionParams> {
+class DeleteSessionUseCase extends UseCase<void, DeleteSessionParams> {
   final AuthRepository _repository;
 
-  const CreateGuestSessionUseCase(this._repository);
+  const DeleteSessionUseCase(this._repository);
 
   @override
   FutureOr<Either<Failure, void>> call(DeleteSessionParams params) => _repository.deleteSession(params);
