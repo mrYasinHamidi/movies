@@ -1,19 +1,30 @@
+import 'dart:ui';
+
 import 'package:dio/dio.dart';
 
-part 'request_interceptor.dart';
+part 'default_interceptor.dart';
+
+typedef TokenProvider = String? Function();
+typedef BaseUrlProvider = String Function();
+typedef TokenChanged = String Function();
 
 class Request {
   final Dio _dio = Dio();
-  final String baseUrl;
+  final TokenProvider token;
+  final BaseUrlProvider baseUrl;
+  final VoidCallback? unAuthorizedHandler;
 
-  Request({required this.baseUrl}) {
-    _dio.interceptors.add(RequestInterceptor(findToken: () => _token));
-  }
-
-  String? _token;
-
-  void setToken(String token) {
-    _token = token;
+  Request({
+    required this.token,
+    required this.baseUrl,
+    this.unAuthorizedHandler,
+  }) {
+    _dio.interceptors.add(
+      DefaultInterceptor(
+        findToken: token,
+        unAuthorizedHandler: unAuthorizedHandler,
+      ),
+    );
   }
 
   Future<Response> get(
@@ -23,7 +34,7 @@ class Request {
   }) =>
       _dio.get(
         '${baseUrl ?? this.baseUrl}$path',
-        queryParameters: (queryParameters ?? {}),
+        queryParameters: queryParameters,
       );
 
   Future<Response> post(
@@ -34,7 +45,7 @@ class Request {
   }) =>
       _dio.post(
         '${baseUrl ?? this.baseUrl}$path',
-        queryParameters: (queryParameters ?? {}),
+        queryParameters: queryParameters,
         data: data,
       );
 
@@ -46,7 +57,7 @@ class Request {
   }) =>
       _dio.delete(
         '${baseUrl ?? this.baseUrl}$path',
-        queryParameters: (queryParameters ?? {}),
+        queryParameters: queryParameters,
         data: data,
       );
 }

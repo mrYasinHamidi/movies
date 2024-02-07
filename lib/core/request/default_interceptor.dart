@@ -1,11 +1,13 @@
 part of 'request.dart';
 
-typedef FindToken = String? Function();
+class DefaultInterceptor extends Interceptor {
+  final TokenProvider findToken;
+  final VoidCallback? unAuthorizedHandler;
 
-class RequestInterceptor extends Interceptor {
-  final FindToken findToken;
-
-  RequestInterceptor({required this.findToken});
+  DefaultInterceptor({
+    required this.findToken,
+    this.unAuthorizedHandler,
+  });
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
