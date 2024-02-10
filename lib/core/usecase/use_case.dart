@@ -27,7 +27,7 @@ abstract class BaseUseCase<Type> {
 abstract class UseCase<Type, Params> extends BaseUseCase<Type> {
   const UseCase();
 
-  FutureOr<Either<Failure, Type>> call(Params params);
+  FutureOr<Either<Failure, Type>> call(Params param);
 }
 
 abstract class NoParamUseCase<Type> extends BaseUseCase<Type> {

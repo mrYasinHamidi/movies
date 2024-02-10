@@ -3,12 +3,20 @@ import 'dart:async';
 import 'package:hive_flutter/hive_flutter.dart';
 
 abstract class LocalDataSource {
-  late final Box box;
-  abstract final String boxKey;
+  late final Box _box;
+  final String _boxKey = 'local_storage';
 
   Future<void> ensureInitialized() async {
-    box = await Hive.openBox(boxKey);
+    _box = await Hive.openBox(_boxKey);
   }
 
-  Future<void> clear() => box.clear();
+  Future<void> write(String key, dynamic value) {
+    return _box.put(key, value);
+  }
+
+  T read<T>(String key) {
+    return _box.get(key);
+  }
+
+  Future<void> clear() => _box.clear();
 }
