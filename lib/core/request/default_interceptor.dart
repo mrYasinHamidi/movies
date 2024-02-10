@@ -3,10 +3,12 @@ part of 'request.dart';
 class DefaultInterceptor extends Interceptor {
   final TokenProvider findToken;
   final VoidCallback? unAuthorizedHandler;
+  final TokenChanged? onTokenChanged;
 
   DefaultInterceptor({
     required this.findToken,
     this.unAuthorizedHandler,
+    this.onTokenChanged,
   });
 
   @override
