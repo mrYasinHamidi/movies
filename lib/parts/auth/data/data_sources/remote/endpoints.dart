@@ -1,4 +1,4 @@
 class AuthEndpoints {
-  static const String login = '/login';
-  static const String signup = '/signup';
+  static const String login = '/auth/login';
+  static const String signup = '/auth/signup';
 }

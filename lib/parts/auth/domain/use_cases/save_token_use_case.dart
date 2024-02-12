@@ -15,12 +15,7 @@ class SaveTokenUseCase extends UseCase<void, TokenEntity> {
   @override
   FutureOr<Either<Failure, void>> call(TokenEntity param) {
     return perform(
-      () => Future.wait(
-        [
-          repository.saveAccessToken(param.accessToken),
-          repository.saveRefreshToken(param.refreshToken),
-        ],
-      ),
+      () => repository.saveToken(param),
     );
   }
 }

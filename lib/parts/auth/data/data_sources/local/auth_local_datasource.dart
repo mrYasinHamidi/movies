@@ -1,11 +1,10 @@
 import 'package:movies/core/data_source/local_data_source.dart';
+import 'package:movies/parts/auth/data/models/token_model.dart';
 
 abstract class AuthLocalDataSource extends LocalDataSource {
-  Future<void> saveRefreshToken(String token);
+  AuthLocalDataSource(super.storageKey);
 
-  Future<void> saveAccessToken(String token);
+  Future<void> saveToken(TokenModel token);
 
-  String? getRefreshToken();
-
-  String? getAccessToken();
+  TokenModel getToken();
 }

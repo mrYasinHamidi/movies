@@ -5,11 +5,13 @@ import 'package:movies/parts/auth/presentation/pages/login/login_bindings.dart';
 import 'package:movies/parts/auth/presentation/pages/login/login_page.dart';
 import 'package:movies/parts/auth/presentation/pages/signup/signup_bindings.dart';
 import 'package:movies/parts/auth/presentation/pages/signup/signup_page.dart';
+import 'package:movies/parts/showcase/presentation/pages/showcase/showcase_bindings.dart';
+import 'package:movies/parts/showcase/presentation/pages/showcase/showcase_page.dart';
 import 'package:movies/parts/splash/presentation/pages/splash/splash_bindings.dart';
 import 'package:movies/parts/splash/presentation/pages/splash/splash_page.dart';
 
 class AppRouter {
-  static const String initialRoute = RoutesName.splash;
+  static const String initialRoute = RoutesName.signup;
 
   static List<GetPage> pages = [
     GetPage(
@@ -32,12 +34,18 @@ class AppRouter {
       page: () => ForgetPasswordPage(),
       binding: ForgetPasswordBindings(),
     ),
+    GetPage(
+      name: RoutesName.showcase,
+      page: () => ShowcasePage(),
+      binding: ShowcaseBindings(),
+    ),
   ];
 }
 
 class RoutesName {
   static const String splash = '/splash';
   static const String login = '/login';
-  static const String signup = '/login';
+  static const String signup = '/signup';
   static const String forgetPassword = '/forgetPassword';
+  static const String showcase = '/showcase';
 }

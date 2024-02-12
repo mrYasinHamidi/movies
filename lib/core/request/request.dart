@@ -35,7 +35,7 @@ class Request {
     Map<String, dynamic>? queryParameters,
   }) =>
       _dio.get(
-        '${baseUrl ?? this.baseUrl}$path',
+        '${baseUrl ?? this.baseUrl()}$path',
         queryParameters: queryParameters,
       );
 
@@ -46,7 +46,7 @@ class Request {
     data,
   }) =>
       _dio.post(
-        '${baseUrl ?? this.baseUrl}$path',
+        '${baseUrl ?? this.baseUrl()}$path',
         queryParameters: queryParameters,
         data: data,
       );
@@ -58,7 +58,7 @@ class Request {
     data,
   }) =>
       _dio.delete(
-        '${baseUrl ?? this.baseUrl}$path',
+        '${baseUrl ?? this.baseUrl()}$path',
         queryParameters: queryParameters,
         data: data,
       );

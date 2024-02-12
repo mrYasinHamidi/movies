@@ -6,15 +6,11 @@ import 'package:movies/parts/auth/domain/params/signup_param.dart';
 abstract class AuthRepository extends Repository {
   const AuthRepository();
 
-  Future<void> saveAccessToken(String token);
+  Future<void> saveToken(TokenEntity token);
 
-  Future<void> saveRefreshToken(String token);
+  TokenEntity getSavedToken();
 
-  String? getSavedAccessToken();
-
-  String? getSavedRefreshToken();
-
-  Future<TokenEntity> signup(SignupParam param);
+  Future<void> signup(SignupParam param);
 
   Future<TokenEntity> login(LoginParam param);
 }

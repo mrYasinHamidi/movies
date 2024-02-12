@@ -1,27 +1,29 @@
-import 'package:movies/common/storage_keys.dart';
-import 'package:movies/common/storage_keys.dart';
-import 'package:movies/common/storage_keys.dart';
-import 'package:movies/common/storage_keys.dart';
+import 'dart:convert';
+
 import 'package:movies/parts/auth/data/data_sources/local/auth_local_datasource.dart';
+import 'package:movies/parts/auth/data/models/token_model.dart';
 
 class AuthLocalDataSourceImpl extends AuthLocalDataSource {
+  final String _tokenKey = 'tokenKey';
+
+  AuthLocalDataSourceImpl() : super('authStorage');
+
   @override
-  String? getAccessToken() {
-    return read(StorageKeys.accessToken);
+  TokenModel getToken() {
+    return TokenModel.fromJson(
+      jsonDecode(
+        read(_tokenKey),
+      ),
+    );
   }
 
   @override
-  String? getRefreshToken() {
-    return read(StorageKeys.refreshToken);
-  }
-
-  @override
-  Future<void> saveAccessToken(String token) {
-    return write(StorageKeys.accessToken, token);
-  }
-
-  @override
-  Future<void> saveRefreshToken(String token) {
-    return write(StorageKeys.refreshToken, token);
+  Future<void> saveToken(TokenModel token) {
+    return write(
+      _tokenKey,
+      jsonEncode(
+        token.toJson(),
+      ),
+    );
   }
 }

@@ -15,10 +15,7 @@ class GetTokenUseCase extends NoParamUseCase<TokenEntity> {
   @override
   Either<Failure, TokenEntity> call() {
     return performSync(
-      () => TokenEntity(
-        accessToken: repository.getSavedAccessToken()!,
-        refreshToken: repository.getSavedRefreshToken()!,
-      ),
+      () => repository.getSavedToken(),
     );
   }
 }

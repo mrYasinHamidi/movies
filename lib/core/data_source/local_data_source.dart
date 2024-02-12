@@ -4,7 +4,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 abstract class LocalDataSource {
   late final Box _box;
-  final String _boxKey = 'local_storage';
+  final String _boxKey;
+
+  LocalDataSource(String storageKey) : _boxKey = storageKey;
 
   Future<void> ensureInitialized() async {
     _box = await Hive.openBox(_boxKey);
