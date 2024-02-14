@@ -12,9 +12,11 @@ class Translator extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en_US': {
           'signup': 'Signup',
+          'login': 'Login',
         },
         'fa_FA': {
           'signup': 'ثبت نام',
+          'login': 'ورود',
         },
       };
 }
