@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movies/common/app_router.dart';
+import 'package:movies/common/tools/toast.dart';
 import 'package:movies/parts/auth/domain/params/signup_param.dart';
 import 'package:movies/parts/auth/domain/use_cases/signup_use_case.dart';
 
@@ -16,10 +17,13 @@ class SignupController extends GetxController {
       SignupParam(
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
+        username: usernameController.text.trim(),
       ),
     );
     res.fold(
-      (l) {},
+      (l) {
+        Toast.showError(l.error.toString());
+      },
       (r) {
         Get.offNamed(RoutesName.login);
       },

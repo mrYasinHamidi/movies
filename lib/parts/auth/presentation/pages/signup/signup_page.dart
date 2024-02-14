@@ -8,29 +8,32 @@ class SignupPage extends GetView<SignupController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          TextFormField(
-            controller: controller.usernameController,
-          ),
-          TextFormField(
-            controller: controller.passwordController,
-          ),
-          TextFormField(
-            controller: controller.passwordController,
-          ),
-          TextFormField(
-            controller: controller.emailController,
-          ),
-          ElevatedButton(
-            onPressed: controller.submit,
-            child: Text('signup'.tr),
-          ),
-          ElevatedButton(
-            onPressed: controller.openLoginPage,
-            child: Text('login'.tr),
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            TextFormField(
+              controller: controller.usernameController,
+            ),
+            TextFormField(
+              controller: controller.passwordController,
+            ),
+            TextFormField(
+              controller: controller.passwordController,
+            ),
+            TextFormField(
+              controller: controller.emailController,
+            ),
+            ElevatedButton(
+              onPressed: controller.submit,
+              child: Text('signup'.tr),
+            ),
+            ElevatedButton(
+              onPressed: controller.openLoginPage,
+              child: Text('login'.tr),
+            ),
+          ],
+        ),
       ),
     );
   }
