@@ -7,6 +7,12 @@ class LoginPage extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Form(
+        child: Column(
+          children: [],
+        ),
+      ),
+    );
   }
 }
