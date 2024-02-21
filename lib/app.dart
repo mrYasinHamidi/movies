@@ -14,7 +14,6 @@ class App extends StatelessWidget {
       translations: Translator(),
       locale: Translator.defaultLocal,
       fallbackLocale: Translator.fa,
-      initialBinding: AppBindings(),
       getPages: AppRouter.pages,
       initialRoute: AppRouter.initialRoute,
     );

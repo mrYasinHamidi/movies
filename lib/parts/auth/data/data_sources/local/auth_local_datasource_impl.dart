@@ -26,4 +26,10 @@ class AuthLocalDataSourceImpl extends AuthLocalDataSource {
       ),
     );
   }
+
+  static Future<AuthLocalDataSourceImpl> build() async {
+    final authLocalDataSource = AuthLocalDataSourceImpl();
+    await authLocalDataSource.ensureInitialized();
+    return authLocalDataSource;
+  }
 }

@@ -11,7 +11,7 @@ import 'package:movies/parts/splash/presentation/pages/splash/splash_bindings.da
 import 'package:movies/parts/splash/presentation/pages/splash/splash_page.dart';
 
 class AppRouter {
-  static const String initialRoute = RoutesName.signup;
+  static const String initialRoute = RoutesName.splash;
 
   static List<GetPage> pages = [
     GetPage(

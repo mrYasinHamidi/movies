@@ -17,15 +17,15 @@ class LoginController extends GetxController {
   void submit() async {
     if (!formKey.currentState!.validate()) return;
     final param = LoginParam(
-      email: usernameController.text.trim(),
+      username: usernameController.text.trim(),
       password: passwordController.text.trim(),
     );
     final res = await _login.call(param);
     res.fold(
       (l) => Toast.showError(l.message),
-      (r)async {
+      (r) async {
         await _saveToken.call(r);
-
+        Get.offNamed(RoutesName.showcase);
       },
     );
   }

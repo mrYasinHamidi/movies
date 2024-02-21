@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:movies/common/app_bindings.dart';
 
 import 'app.dart';
 
@@ -11,6 +12,7 @@ void main() async {
 class Setup {
   static Future<void> initialize() async {
     await Hive.initFlutter();
+    await AppBindings().dependencies();
     WidgetsFlutterBinding.ensureInitialized();
   }
 

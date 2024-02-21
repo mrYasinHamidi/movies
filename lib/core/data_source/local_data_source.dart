@@ -21,4 +21,5 @@ abstract class LocalDataSource {
   }
 
   Future<void> clear() => _box.clear();
+
 }
