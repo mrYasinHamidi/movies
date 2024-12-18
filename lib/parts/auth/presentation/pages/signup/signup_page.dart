@@ -16,12 +16,9 @@ class SignupPage extends GetView<SignupController> {
           child: Column(
             children: [
               TextFormField(
-                controller: controller.usernameController,
-                validator: (value) => value?.isValidUsername() ?? false ? null : 'usernameValidationError'.tr,
-              ),
-              TextFormField(
                 controller: controller.passwordController,
                 validator: (value) => value?.isValidPassword() ?? false ? null : 'passwordValidationError'.tr,
+                decoration: InputDecoration(labelText: 'password'),
               ),
               TextFormField(
                 controller: controller.passwordConfirmController,
@@ -29,6 +26,7 @@ class SignupPage extends GetView<SignupController> {
                     controller.passwordConfirmController.text.trim() == controller.passwordController.text.trim()
                         ? null
                         : 'passwordsNotMatch'.tr,
+                decoration: InputDecoration(labelText: 'confirm'),
               ),
               TextFormField(
                 controller: controller.emailController,

@@ -11,7 +11,7 @@ class LoginBindings extends Bindings {
   void dependencies() {
     Get.put(
       AuthRemoteDataSourceImpl(
-        request: Get.find(tag: 'main'),
+        request: Get.find(),
       ),
     );
     Get.put(

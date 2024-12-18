@@ -6,7 +6,9 @@ import 'package:movies/parts/auth/domain/params/signup_param.dart';
 abstract class AuthRemoteDataSource extends RemoteDataSource {
   const AuthRemoteDataSource({required super.request});
 
-  Future<void> signup(SignupParam param);
+  Future<TokenModel> register(SignupParam param);
 
   Future<TokenModel> login(LoginParam param);
+
+  Future<TokenModel> refreshToken(String refreshToken);
 }

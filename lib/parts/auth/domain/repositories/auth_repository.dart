@@ -10,7 +10,9 @@ abstract class AuthRepository extends Repository {
 
   TokenEntity getSavedToken();
 
-  Future<void> signup(SignupParam param);
+  Future<TokenEntity> register(SignupParam param);
 
   Future<TokenEntity> login(LoginParam param);
+
+  Future<TokenEntity> refreshToken(String refreshToken);
 }

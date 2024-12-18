@@ -23,6 +23,10 @@ class LoginPage extends GetView<LoginController> {
               onPressed: controller.submit,
               child: Text('login'.tr),
             ),
+            ElevatedButton(
+              onPressed: controller.openSignupPage,
+              child: Text('signup'.tr),
+            ),
           ],
         ),
       ),

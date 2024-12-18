@@ -17,10 +17,20 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
   }
 
   @override
-  Future<void> signup(SignupParam param) async {
-    await request.post(
-      AuthEndpoints.signup,
+  Future<TokenModel> register(SignupParam param) async {
+    final res = await request.post(
+      AuthEndpoints.register,
       data: param.toJson(),
     );
+    return TokenModel.fromJson(res.data);
+  }
+
+  @override
+  Future<TokenModel> refreshToken(String refreshToken) async {
+    final res = await request.post(
+      AuthEndpoints.refreshToken,
+      data: {'refreshToken': refreshToken},
+    );
+    return TokenModel.fromJson(res.data);
   }
 }

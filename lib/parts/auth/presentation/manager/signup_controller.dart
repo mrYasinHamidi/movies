@@ -10,7 +10,6 @@ class SignupController extends GetxController {
   final _signup = Get.find<SignupUseCase>();
 
   final formKey = GlobalKey<FormState>();
-  final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController passwordConfirmController = TextEditingController();
@@ -21,7 +20,6 @@ class SignupController extends GetxController {
       SignupParam(
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
-        username: usernameController.text.trim(),
       ),
     );
     res.fold(

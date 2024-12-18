@@ -22,8 +22,9 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<void> signup(SignupParam param) {
-    return remoteDataSource.signup(param);
+  Future<TokenEntity> register(SignupParam param) async {
+    final model = await remoteDataSource.register(param);
+    return model.toEntity();
   }
 
   @override
@@ -34,5 +35,11 @@ class AuthRepositoryImpl extends AuthRepository {
   @override
   Future<void> saveToken(TokenEntity token) {
     return localDataSource.saveToken(TokenModel.fromEntity(token));
+  }
+
+  @override
+  Future<TokenEntity> refreshToken(String refreshToken) async {
+    final model = await remoteDataSource.refreshToken(refreshToken);
+    return model.toEntity();
   }
 }

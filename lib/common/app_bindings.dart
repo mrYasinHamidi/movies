@@ -12,15 +12,6 @@ class AppBindings extends Bindings {
         token: () => '',
       ),
       fenix: true,
-      tag: 'main',
-    );
-    Get.lazyPut(
-      () => Request(
-        baseUrl: () => Constants.TMDBBaseUrl,
-        token: () => Constants.TMDBBearerToken,
-      ),
-      fenix: true,
-      tag: 'tmdb',
     );
     await Get.putAsync(
       () => AuthLocalDataSourceImpl.build(),

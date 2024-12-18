@@ -10,12 +10,12 @@ class SplashController extends GetxController {
     ///if user is not logged in => go to [RoutesName.login] page
     Future.delayed(
       Duration(seconds: 1),
-          () {
+      () {
         Get.find<GetTokenUseCase>().call().fold(
-              (l) {
+          (l) {
             Get.offNamed(RoutesName.login);
           },
-              (r) {
+          (r) {
             Get.offNamed(RoutesName.showcase);
           },
         );
